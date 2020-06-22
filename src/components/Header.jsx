@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 // Icon
 import pokeballIcon from '../assets/images/Pokeball.svg';
 
-const Header = props => {
+const Header = () => {
   return (
     <>
-      <header className='header mobile'>
+      <header className='header HideOnMobile'>
         <div className='wrapper'>
           <div className='container'>
             <div className='header--title'>

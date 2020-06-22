@@ -6,7 +6,7 @@ import search from '../assets/images/Search.svg';
 const Filters = () => {
   return (
     <>
-      <div className='filters'>
+      <div className='filters HideOnMobile'>
         <div className='wrapper'>
           <div className='container'>
             <div className='filters-grid'>

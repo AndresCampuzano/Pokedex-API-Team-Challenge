@@ -8,7 +8,7 @@ import Header from '../components/Header.jsx';
 import backArrow from '../assets/images/back-btn.svg';
 
 // Test
-import testImage from '../assets/images/25-Pikachu.png';
+import testImage from '../assets/images/39-Jigglypuff.png';
 
 const Detail = props => {
   const [dataRender, setDataRender] = useState([]);
@@ -48,10 +48,12 @@ const Detail = props => {
               backgroundColor: data
             }}
           >
+            <span className='margin-desktop-detail HideOnMobile' />
+
             <div className='wrapper'>
-              {/* <button className='btn-back desktop' onClick={goBack}>
-                Go back
-              </button> */}
+              <div className='detail-backBtn-desktop HideOnMobile'>
+                <button onClick={goBack}>Go back</button>
+              </div>
               <div className='detail-backBtn'>
                 <img src={backArrow} alt='go back' onClick={goBack} />
               </div>

@@ -3,8 +3,10 @@ import LazyLoad from 'react-lazyload';
 
 // Components
 import Header from '../components/Header.jsx';
+import HeaderMobile from '../components/HeaderMobile.jsx';
 import Filters from '../components/Filters.jsx';
 import ItemHome from '../components/ItemHome.jsx';
+import FloatingCircle from '../components/FloatingCircle.jsx';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -36,7 +38,11 @@ const Home = () => {
   return (
     <>
       <Header />
+      <HeaderMobile />
+      <span className='margin ShowOnMobile' />
+      <span className='margin-desktop HideOnMobile' />
       <Filters />
+      <FloatingCircle />
       <LazyLoad height={200}>
         <main className='wrapper-itemsHome'>
           {data.body
