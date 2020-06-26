@@ -3,23 +3,36 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
 // Test image
-import testImage from '../assets/images/25-Pikachu.png';
+// import testImage from '../assets/images/25-Pikachu.png';
 
-const ItemHome = props => {
+const Item = props => {
   // console.log('Props from ItemHome: ', props);
+
+  const isLegendary = props.is_legendary
+    ? 'color-text-yellow'
+    : 'color-text-dark';
+
+  const img = new Image();
+
+  let imageURL = props.image_link;
+  let googleProxyURL =
+    'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
+
+  img.crossOrigin = 'Anonymous';
+  img.src = props.image_link && googleProxyURL + encodeURIComponent(imageURL);
 
   return (
     <LazyLoad height={250}>
       <article className='ItemHome'>
-        <Link to={`/${props.pokedex_number}/${props.name}`}>
+        <Link to={`/${props.number}/${props.name}`}>
           <div className='ItemHome--fakeBG'>
             <div className='ItemHome--realBG'>
               <div className='ItemHome-realBG--img'>
-                <img src={testImage} alt='test image' />
+                <img src={img.src} alt={props.name} />
               </div>
-              <h2>{props.name}</h2>
-              <p>#{props.pokedex_number}</p>
-              <h3>{props.classification}</h3>
+              <h2 className={`${isLegendary}`}>{props.name}</h2>
+              <p className={`${isLegendary}`}>#{props.number}</p>
+              <h3 className={`${isLegendary}`}>{props.classification}</h3>
               <div className='ItemHome-realBG--type'>
                 {props.type2 ? (
                   <>
@@ -116,4 +129,4 @@ const ItemHome = props => {
   );
 };
 
-export default ItemHome;
+export default Item;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Icons
 import search from '../assets/images/Search.svg';
@@ -11,76 +12,117 @@ const Filters = () => {
           <div className='container'>
             <div className='filters-grid'>
               <div className='filters-search'>
-                <input type='text' placeholder='Search for Pokemon...' />
+                <label htmlFor='search' className='color-text-white'>
+                  .
+                </label>
+                <input
+                  type='text'
+                  placeholder='Search for Pokemon...'
+                  id='search'
+                />
                 <img src={search} alt='search' />
               </div>
-              <div className='filters-curiosities'>
-                <p>CURIOSITIES</p>
+              <div className='filters-curiosities pulse'>
+                <Link to='/curiosities'>
+                  <p>CURIOSITIES</p>
+                </Link>
               </div>
               <div className='filters-all'>
-                <p>SHOW ALL</p>
+                <Link to='/'>
+                  <p className='color-text-white'>SHOW ALL</p>
+                </Link>
               </div>
               <div className='filters-bug'>
-                <p>BUG</p>
+                <Link to='/bug'>
+                  <p className='color-text-white'>BUG</p>
+                </Link>
               </div>
               <div className='filters-dark'>
-                <p>DARK</p>
+                <Link to='/dark'>
+                  <p className='color-text-white'>DARK</p>
+                </Link>
               </div>
               <div className='filters-dragon'>
-                <p>DRAGON</p>
+                <Link to='/dragon'>
+                  <p className='color-text-white'>DRAGON</p>
+                </Link>
               </div>
               <div className='filters-electric'>
-                <p>ELECTRIC</p>
+                <Link to='/electric'>
+                  <p className='color-text-white'>ELECTRIC</p>
+                </Link>
               </div>
               <div className='filters-fairy'>
-                <p>FAIRY</p>
+                <Link to='/fairy'>
+                  <p className='color-text-white'>FAIRY</p>
+                </Link>
               </div>
               <div className='filters-fighting'>
-                <p>FIGHTING</p>
+                <Link to='/fighting'>
+                  <p className='color-text-white'>FIGHTING</p>
+                </Link>
               </div>
               <div className='filters-fire'>
-                <p>FIRE</p>
+                <Link to='/fire'>
+                  <p className='color-text-white'>FIRE</p>
+                </Link>
               </div>
               <div className='filters-flying'>
-                <p>FLYING</p>
+                <Link to='/flying'>
+                  <p className='color-text-white'>FLYING</p>
+                </Link>
               </div>
               <div className='filters-ghost'>
-                <p>GHOST</p>
+                <Link to='/ghost'>
+                  <p className='color-text-white'>GHOST</p>
+                </Link>
               </div>
               <div className='filters-normal'>
-                <p>NORMAL</p>
+                <Link to='/normal'>
+                  <p className='color-text-white'>NORMAL</p>
+                </Link>
               </div>
               <div className='filters-poison'>
-                <p>POISON</p>
+                <Link to='/poison'>
+                  <p className='color-text-white'>POISON</p>
+                </Link>
               </div>
               <div className='filters-psychic'>
-                <p>PSYCHIC</p>
+                <Link to='/psychic'>
+                  <p className='color-text-white'>PSYCHIC</p>
+                </Link>
               </div>
               <div className='filters-rock'>
-                <p>ROCK</p>
+                <Link to='/rock'>
+                  <p className='color-text-white'>ROCK</p>
+                </Link>
               </div>
               <div className='filters-steel'>
-                <p>STEEL</p>
+                <Link to='/steel'>
+                  <p className='color-text-white'>STEEL</p>
+                </Link>
               </div>
               <div className='filters-water'>
-                <p>WATER</p>
+                <Link to='/water'>
+                  <p className='color-text-white'>WATER</p>
+                </Link>
               </div>
               <div className='filters-grass'>
-                <p>GRASS</p>
+                <Link to='/grass'>
+                  <p className='color-text-white'>GRASS</p>
+                </Link>
               </div>
               <div className='filters-ground'>
-                <p>GROUND</p>
+                <Link to='/ground'>
+                  <p className='color-text-white'>GROUND</p>
+                </Link>
               </div>
               <div className='filters-ice'>
-                <p>ICE</p>
+                <Link to='/ice'>
+                  <p className='color-text-white'>ICE</p>
+                </Link>
               </div>
             </div>
-            {/* <div className='filters-top'>
-              <div className='filters--input-search'>
-                <input type='text' placeholder='Search for Pokemon' />
-                <img src={search} alt='search' />
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

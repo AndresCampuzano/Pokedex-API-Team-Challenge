@@ -22,10 +22,10 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            <div className='credits'>
+            {/* <div className='credits'>
               <p>About</p>
               <p>Contact Us</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>

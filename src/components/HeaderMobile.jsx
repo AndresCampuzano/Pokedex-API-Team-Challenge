@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Icon
 import pokeballIcon from '../assets/images/Pokeball.svg';
@@ -10,15 +10,30 @@ const HeaderMobile = () => {
     <>
       <header className='header-mobile ShowOnMobile'>
         <div className='header-mobile--title'>
-          <img src={pokeballIcon} alt='Pokemon icon' />
-          <h1>Pokedex</h1>
+          <Link to='/'>
+            <img src={pokeballIcon} alt='Pokemon icon' />
+          </Link>
+          <Link to='/'>
+            <h1>Pokedex</h1>
+          </Link>
         </div>
         <div className='header-mobile--search'>
-          <input type='text' placeholder='Search for Pokemon...' />
+          <label htmlFor='search' className='color-text-white'>
+            .
+          </label>
+          <input
+            type='text'
+            placeholder='Search for Pokemon...'
+            id='search-mobile'
+          />
           <img src={search} alt='Search icon' name='pokemon' id='pokemon' />
         </div>
         <div className='header-mobile--curiosities'>
-          <button>CURIOSITIES</button>
+          <button type='button' aria-label='curiosities'>
+            <Link to='/curiosities'>
+              <p>CURIOSITIES</p>
+            </Link>
+          </button>
         </div>
       </header>
     </>

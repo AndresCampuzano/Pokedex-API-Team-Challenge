@@ -47,6 +47,7 @@ table {
 
 $blue: #33C9FF;
 $yellow: #FFCC53;
+$light-yellow: #ebcf90fb;
 $green: #58FF90;
 $red: #F02D2D;
 $purple: #9448FF;
@@ -62,6 +63,9 @@ $radius: 50px;
 .color-yellow {
 	background-color: $yellow;
 }
+.color-text-yellow {
+	color: $yellow;
+}
 .color-green {
 	background-color: $green;
 }
@@ -74,6 +78,13 @@ $radius: 50px;
 .color-dark {
 	background-color: $dark;
 }
+.color-text-dark {
+	color: $dark;
+}
+.color-text-white {
+	color: $white;
+}
+
 
 // ------------- END COLORS and VARIABLES
 
@@ -136,6 +147,12 @@ p {
 	// width: 100%;
 }
 
+.flex-btn {
+	display: flex;
+	justify-content: center;
+	// width: 100%;
+}
+
 .margin {
 	height: 165px;
 }
@@ -148,6 +165,26 @@ p {
 	height: 75px;
 }
 
+.btn-next-back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// padding: 15px 30px 15px 30px;
+	width: 100px;
+	height: 45px;
+	font-size: 14px;
+	font-weight: 600;
+	background-color: $white;
+	color: $dark;
+	border: none;
+	margin: 15px 5px;
+	border-radius: $radius;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 2px 8px 0px #0000009c;
+	-moz-box-shadow: 0px 2px 8px 0px #0000009c;
+	box-shadow: 0px 2px 8px 0px #0000009c;
+	outline: none;
+}
 
 // ---------- Header
 
@@ -197,6 +234,7 @@ p {
 // ---------- End Header
 // ---------- Header Mobile
 .header-mobile {
+	z-index: 1;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -236,6 +274,9 @@ p {
 	}
 	.header-mobile--curiosities {
 		margin: 5px 15px 8px 15px;
+		a {
+			color: $light-gray
+		}
 		button {
 			width: 100%;
 			height: 30px;
@@ -252,6 +293,8 @@ p {
 
 // ---------- Floating Circle
 .floating {
+	border-radius: 50%;
+	z-index: 1;
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
@@ -265,11 +308,68 @@ p {
 }
 // ---------- End Floating Circle
 
+// ----------  popUp-mobileMenu
+.popUp-mobileMenu--BG {
+	position: fixed;
+	top: 0%;
+	width: 100%;
+	height: 100vh;
+	animation: BGColorMenuMobile 0.4s forwards;
+	z-index: 3;
+}
+.popUp-mobileMenu {
+	animation: slideUp 0.4s forwards;
+	// animation-delay: 0.5s;
+	z-index: 4;
+  position: fixed;
+	left: 3%;
+	top: 100%;
+  background-color:$light-gray;
+  text-align: center;
+	width: 93%;
+	height: 96%;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	padding-top: 15px;
+	.popUp-mobileMenu--btnAlone {
+		border-radius: $radius;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $light-gray;
+		margin: auto;
+		max-width: 90%;
+
+	}
+	.popUp-mobileMenu--grid {
+		margin: auto;
+		max-width: 90%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 10px;
+		row-gap: 10px;
+		padding-top: 10px;
+		// a {
+		// 	color: $light-gray;
+		// }
+		.popUp-mobileMenu--grid--item {
+			border-radius: $radius;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $light-gray;
+		}
+	}
+}
+// ---------- End popUp-mobileMenu
+
 
 // ---------- Filters
 
 .filters {
-	animation: fadeIn ease 0.5s;
+	// animation: fadeIn ease 0.5s;
 	margin: 55px 0;
 	.container {
 		.filters-grid {
@@ -315,10 +415,16 @@ p {
 				color: $light-gray;
 				background-color: $red;
 				border-radius: $radius;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				p {
 					display: flex;
 					justify-content: center;
 					padding: 20px 0;
+				}
+				a {
+				color: $light-gray;
 				}
 			}
 			.filters-all {
@@ -331,9 +437,11 @@ p {
 				color: $light-gray;
 				background-color: $dark;
 				border-radius: $radius;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				p {
-					display: flex;
-					justify-content: center;
+
 					padding: 20px 0;
 				}
 			}
@@ -426,7 +534,10 @@ main {
 // ---------- ItemHome
 
 .ItemHome {
-	animation: fadeIn ease 0.5s;
+	position: relative;
+	left: -5000px;
+	animation: slideLeft 0.5s forwards;
+	animation-delay: 0.5s;
 	a {
 		text-decoration: none;
 		color: $dark;
@@ -436,7 +547,6 @@ main {
 		// width: 253px;
 		.ItemHome--realBG {
 			margin-top: 86px;
-			background-color: $white;
 			border-radius: $radius;
 			text-align: center;
 			-webkit-box-shadow: 0px 2px 8px 0px #00000041;
@@ -445,7 +555,12 @@ main {
 			height: auto;
 			.ItemHome-realBG--img {
 				img {
-					width: 70%;
+					position: relative;
+					left: -5000px;
+					animation: slideLeft 0.7s forwards;
+					animation-delay: 0.5s;
+					width: 126px;
+					height: 135px;
 					margin-top: -86px;
 				}
 			}
@@ -495,6 +610,24 @@ main {
 					align-items: center;
 					border-radius: $radius;
 				}
+			}
+			.legendaryHome {
+				display: none;
+				padding-bottom: 10px;
+				// width: 50%;
+				display: flex;
+				justify-content: center;
+				margin-top: -8px;
+				p {
+					border-radius: $radius;
+					height: 35px;
+					width: 50%;
+					color: $light-gray;
+					cursor: pointer;
+					justify-content: center;
+					align-items: center;
+				}
+				// padding-bottom: 8px;
 			}
 		}
 	}
@@ -557,13 +690,17 @@ main {
 					flex-direction: column;
 					img {
 						width: 80%;
-						position: relative;
-						top: -5000px;
-						animation: slideUp 0.4s forwards;
-						animation-delay: 0.4s;
+						// position: relative;
+						// top: -5000px;
+						// animation: slideUp 0.4s forwards;
+						// animation-delay: 0.4s;
 					}
 					.card01--grid01-title {
 						display: flex;
+						margin-top: 12px;
+						h3 {
+							margin-left: 10px;
+						}
 					}
 				}
 				.card01--grid02 {
@@ -571,7 +708,7 @@ main {
 						h2 {
 							margin-bottom: 15px;
 						}
-						div {
+						div, a {
 							font-size: 16px;
 							text-transform: uppercase;
 							font-weight: 600;
@@ -583,9 +720,22 @@ main {
 							width: 100%;
 							border-radius: $radius;
 						}
-						div:nth-of-type(2n) {
+						a:nth-of-type(2n) {
 							margin-left: 15px;
 						}
+					}
+					.legendary {
+						font-size: 16px;
+						text-transform: uppercase;
+						font-weight: 600;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: $light-gray;
+						height: 35px;
+						width: 100%;
+						border-radius: $radius;
+						margin: 8px 0;
 					}
 					.card01--grid02-classification {
 						h2 {
@@ -689,10 +839,50 @@ main {
 				}
 			}
 		}
+		.card03 {
+			margin: 25px 0;
+			padding: 5%;
+			width: 100%;
+			max-width: 700px;
+			background-color: $white;
+			-webkit-box-shadow: 0px 2px 8px 0px #00000025;
+			-moz-box-shadow: 0px 2px 8px 0px #00000025;
+			box-shadow: 0px 2px 8px 0px #00000025;
+			border-radius: $radius;
+			h2 {
+				margin: 15px 0;
+			}
+			.card03--grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 10px;
+				row-gap: 50px;
+			}
+		}
 	}
 }
 
 // ---------- End Detail
+// ---------- Curiosities
+.curiosities {
+	h1 {
+		margin: 12px 0;
+	}
+	p {
+		font-size: 20px;
+		margin-bottom: 35px;
+	}
+	h2 {
+		margin: 35px 0;
+	}
+}
+// ---------- End Curiosities
+
+// ---------- Evolutions
+
+
+// ---------- End Evolutions
+
 
 
 //  ---------- MEDIA
@@ -754,6 +944,10 @@ main {
 	.detail .cards .card02 .card02--grid {
 		display: block;
 	}
+		// Card 03
+		.detail .cards .card03 .card03--grid {
+			display: block;
+		}
 
 	// ----- End Header
 }
@@ -783,5 +977,33 @@ main {
 }
 
 @keyframes slideUp {
-	100% { top: 0; }
+	100% { top: 40%; }
 }
+
+@keyframes BGColorMenuMobile {
+	0% { background-color: #00000000; }
+	50% { background-color: #0000005b; }
+	100% { background-color: #000000b7; }
+}
+
+// Pulse Animation
+.pulse {
+	animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+	0% {
+		// transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+	}
+
+	70% {
+		// transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+	}
+
+	100% {
+		// transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+}
+
