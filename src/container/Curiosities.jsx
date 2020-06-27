@@ -35,12 +35,13 @@ const Curiosities = () => {
           <Weakest />
         </main>
         <div className='wrapper-itemsHome'>
-          <h2>Top MaybeLegendary Pokemons</h2>
+          <h2>Top Pokemons that could be Legendary</h2>
         </div>
         <main className='wrapper-itemsHome'>
           <MaybeLegendary />
         </main>
       </div>
+      <span className='margin-desktop HideOnMobile' />
     </>
   );
 };

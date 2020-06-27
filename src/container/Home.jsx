@@ -61,13 +61,14 @@ const Home = () => {
             })
           : 'Loading...'}
       </main>
-      <div className='flex-btn'>
+      <div className='flex-btn HideOnMobile'>
         {count > 1 ? (
           <button
             onClick={() => setCount(count - 1)}
             type='button'
             aria-label='back'
             className='btn-next-back'
+            // backButton
           >
             <img src={backArrow} alt='next button' /> back
           </button>
@@ -79,8 +80,33 @@ const Home = () => {
           type='button'
           aria-label='next'
           className='btn-next-back'
+          // nextButton
         >
           next <img src={nextArrow} alt='next button' />
+        </button>
+      </div>
+      <div className='ShowOnMobile'>
+        {count > 1 ? (
+          <button
+            onClick={() => setCount(count - 1)}
+            type='button'
+            aria-label='back page'
+            className='btn-back-mobile'
+            // backButton
+          >
+            <img src={backArrow} alt='next button' />
+          </button>
+        ) : (
+          ''
+        )}
+        <button
+          onClick={handleNext}
+          type='button'
+          aria-label='next page'
+          className='btn-next-mobile'
+          // nextButton
+        >
+          <img src={nextArrow} alt='next button' />
         </button>
       </div>
       {menu ? (
